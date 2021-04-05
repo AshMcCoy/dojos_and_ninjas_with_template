@@ -1,0 +1,70 @@
+
+this_dojo= Dojo.objects.create(name= "Cowboy Ninja", city= "Darby", state= "Montana")
+
+this_dojo= Dojo.objects.create(name= "Eskimo Ninja", city= "Juneau", state= "Alaska")
+
+this_dojo= Dojo.objects.create(name= "Babyface Ninja", city= "Dallas", state= "Texas")
+
+Dojo.objects.all()
+
+this_dojo= Dojo.objects.all()
+
+Dojo.objects.all().values()
+
+for dojo in this_dojo:
+    print(dojo.name)
+
+dojo_to_delete= Dojo.objects.get(id=1)
+dojo_to_delete.delete()
+
+dojo_to_delete= Dojo.objects.get(id=2)
+dojo_to_delete.delete()
+
+dojo_to_delete= Dojo.objects.get(id=3)
+dojo_to_delete.delete()
+
+Dojo.objects.all() #made sure it returned an empty list after deleting the 3 dojos i just created which it did
+
+new_dojo= Dojo.objects.create(name= "Dallas Dojo", city= "Dallas", state= "Texas")
+
+new_dojo= Dojo.objects.create(name= "Tulsa Dojo", city= "Tulsa", state= "Oklahoma")
+
+new_dojo= Dojo.objects.create(name= "Chicago Dojo", city= "Chicago", state= "Illinois")
+
+all_dojos= Dojo.objects.all()
+
+for dojo in all_dojos:
+    print(dojo.name)
+
+this_dojo= Dojo.objects.get(id=4)
+new_ninja= Ninja.objects.create(first_name= "Cowboy", last_name= "Ninja", dojo= this_dojo)
+
+this_dojo= Dojo.objects.get(id=4)
+new_ninja= Ninja.objects.create(first_name= "Eskimo", last_name= "Ninja", dojo= this_dojo)
+new_ninja= Ninja.objects.create(first_name= "Babyface", last_name= "Ninja", dojo= this_dojo)
+
+this_dojo= Dojo.objects.get(id=5)
+new_ninja= Ninja.objects.create(first_name= "Beast", last_name= "Ninja", dojo= this_dojo)
+new_ninja= Ninja.objects.create(first_name= "Sneaky", last_name= "Ninja", dojo= this_dojo)
+new_ninja= Ninja.objects.create(first_name= "Kitty", last_name= "Ninja", dojo= this_dojo)
+
+
+third_dojo= Dojo.objects.get(id=6)
+new_ninja= Ninja.objects.create(first_name= "Animal", last_name= "Ninja", dojo= third_dojo)
+new_ninja= Ninja.objects.create(first_name= "Electric", last_name= "Ninja", dojo= third_dojo)
+new_ninja= Ninja.objects.create(first_name= "Firefly", last_name= "Ninja", dojo= third_dojo)
+
+Dojo.objects.first().ninjas.all()
+
+Dojo.objects.last().ninjas.all()
+
+Ninja.objects.last().dojo
+
+dojo7= Dojo.objects.create(name= "Oakland Dojo", city= "Oakland", state= "California")
+
+#forgot to add the desc field above so I created another one below to show that. 
+dojo8= Dojo.objects.create(name= "Silicon Valley", city= "Silicon Valley", state= "California", desc= "It's a new dojo!")
+
+
+
+
